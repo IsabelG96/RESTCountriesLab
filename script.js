@@ -1,11 +1,8 @@
-console.log("Testing, testing, 1 2 3 ...")
+// console.log("Testing, testing, 1 2 3 ...")
 
 let apiData; 
 const countriesList = document.querySelector("#countriesList");
-const enter = document.getElementById("#enter"); 
-let newItem = document.getElementById("#new-country").value;
-console.log(newItem);
-
+const enter = document.querySelector("#enter"); 
 
 async function setup(){
     fetchREST();
@@ -30,6 +27,13 @@ function createNewCountryElement (country) {
     newListItem.innerText = `${country.name.common}, population: ${country.population}`
     countriesList.appendChild(newListItem);
 }
+
+enter.addEventListener("click", event => {    
+    // event.preventDefault();
+    const newItem = document.getElementById("new-country").value 
+    console.log(newItem);
+    const filteredCountry = 
+})
 
 
 
