@@ -28,11 +28,18 @@ function createNewCountryElement (country) {
     countriesList.appendChild(newListItem);
 }
 
+// function filterItems(arr, query) {
+//     return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+//   }
+
 enter.addEventListener("click", event => {    
     // event.preventDefault();
-    const newItem = document.getElementById("new-country").value 
-    console.log(newItem);
-    const filteredCountry = 
+    const searchedCountry = document.getElementById("new-country").value 
+    console.log(searchedCountry);
+    
+    const searchResults = countriesList.filter((country) => country.toLowerCase().includes(searchedCountry.toLowerCase()));
+    countriesList.innerHTML = "";
+    countriesList.appendChild(searchResults);    
 })
 
 
